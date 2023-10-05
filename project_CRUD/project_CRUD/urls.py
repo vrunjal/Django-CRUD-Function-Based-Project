@@ -16,8 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app_enroll.views import add_show
+from app_enroll.views import add_show,delete_data
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',add_show,name="addandshow"),
+    path('<int:id>/',delete_data,name="deletedata"),
 ]
